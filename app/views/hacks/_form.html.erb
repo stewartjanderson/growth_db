@@ -1,4 +1,4 @@
-<%= form_for(@hack) do |f| %>
+<%= simple_form_for(@hack, html: {class: "form-signin"}) do |f| %>  
   <% if @hack.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@hack.errors.count, "error") %> prohibited this hack from being saved:</h2>
@@ -11,27 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
-  </div>
-  <div class="field">
-    <%= f.label :category %><br>
-    <%= f.text_field :category %>
-  </div>
-  <div class="field">
-    <%= f.label :credit_twitter_handle %><br>
-    <%= f.text_field :credit_twitter_handle %>
-  </div>
-  <div class="field">
-    <%= f.label :credit_website %><br>
-    <%= f.text_field :credit_website %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <%= f.input :title, label: false, required: true, autofocus: true, input_html: {class: "form-control"}, placeholder: "Title" %>
+
+    <%= f.input :content, label: false, required: true, input_html: {class: "form-control"}, placeholder: "Content" %>
+
+    <%= f.input :category,  required: true, collection: ["Acquisition", "Activation", "Retention", "Referral", "Revenue"] %>
+
+    <p class="text-center">Want to give someone credit for this hack? (This is optional)</p>
+
+    <%= f.input :credit_twitter_handle, label: false, required: false, input_html: {class: "form-control"}, placeholder: "Source's Twitter Handle" %>
+
+    <%= f.input :credit_website, label: false, required: false, input_html: {class: "form-control"}, placeholder: "Website" %>
+
+    <%= f.button :submit, class: "btn btn-lg btn-success btn-block" %>
 <% end %>

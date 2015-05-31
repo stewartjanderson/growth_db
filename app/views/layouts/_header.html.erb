@@ -1,0 +1,25 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+      <span class="sr-only">Toggle navigation</span>
+    </button>
+    <%= link_to "GrowthDB", root_path, class: "navbar-brand" %>
+  </div>
+  <div class="collapse navbar-collapse" id="navbar-collapse-01">
+    <ul class="nav navbar-nav navbar-right">  
+        <% if current_user %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><li>My Account</li></a>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to "Settings", edit_user_registration_path %></li>
+                    <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+                  </ul>
+                </li>
+        <% else %>
+            <li><%= link_to "Log In", new_user_session_path %></li>
+            <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <% end %> 
+      </ul>               
+    </div>
+  </div><!-- /.navbar-collapse -->
+</nav><!-- /navbar -->
