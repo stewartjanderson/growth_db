@@ -1,33 +1,38 @@
-<p id="notice"><%= notice %></p>
-
-<div class="text-center">
-  <h1>Latest Growth Hacks</h1><%= link_to 'Add a Growth Hack', new_hack_path, :class=>"btn btn-success" %>
+<div class="row">
+  <div class="col-md-3"><h1 class="text-center">Search</h1> </div> 
+  <div class="col-md-1"></div>
+  <div class="col-md-5"><h1 class="text-center">Latest Growth Hacks</h1></div>
+  <div class="col-md-3 text-center" ><%= link_to 'Add a Growth Hack', new_hack_path, :class=>"btn btn-success" %></div> 
 </div>
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-9">  
+    <table class="table table-striped table-hover ">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Content</th>
+          <th>Category</th>
+          <th>Credit twitter handle</th>
+          <th>Credit website</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-<table class="table table-striped table-hover ">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Category</th>
-      <th>Credit twitter handle</th>
-      <th>Credit website</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @hacks.each do |hack| %>
-      <tr>
-        <td><%= hack.title %></td>
-        <td><%= hack.content %></td>
-        <td><%= hack.category %></td>
-        <td><%= hack.credit_twitter_handle %></td>
-        <td><%= hack.credit_website %></td>
-        <td><%= link_to 'Show', hack %></td>
-        <td><%= link_to 'Edit', edit_hack_path(hack) %></td>
-        <td><%= link_to 'Destroy', hack, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tbody>
+        <% @hacks.each do |hack| %>
+          <tr>
+            <td><%= hack.title %></td>
+            <td><%= hack.content %></td>
+            <td><%= hack.category %></td>
+            <td><%= hack.credit_twitter_handle %></td>
+            <td><%= hack.credit_website %></td>
+            <td><%= link_to 'Show', hack %></td>
+            <td><%= link_to 'Edit', edit_hack_path(hack) %></td>
+            <td><%= link_to 'Destroy', hack, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>  
+</div>
