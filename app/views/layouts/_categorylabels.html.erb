@@ -1,0 +1,12 @@
+<% if hack.category == "Acquisition" %>
+              <span class="label label-default">Acquisition</span>
+<% elsif hack.category == "Activation" %>
+              <span class="label label-primary">Activation</span>
+<% elsif hack.category == "Retention" %>
+              <span class="label label-success">Retention</span>
+<% elsif hack.category == "Referral" %>
+              <span class="label label-warning">Referral</span>
+<% elsif hack.category == "Revenue" %>
+              <span class="label label-info">Revenue</span>
+<% else %>
+<% end %>
