@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @hack.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @hack.content %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @hack.category %>
+</p>
+
+<p>
+  <strong>Credit twitter handle:</strong>
+  <%= @hack.credit_twitter_handle %>
+</p>
+
+<p>
+  <strong>Credit website:</strong>
+  <%= @hack.credit_website %>
+</p>
+
+<%= link_to 'Edit', edit_hack_path(@hack) %> |
+<%= link_to 'Back', hacks_path %>
