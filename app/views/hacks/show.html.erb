@@ -1,27 +1,26 @@
-<p>
-  <strong>Title:</strong>
-  <%= @hack.title %>
-</p>
+<div class="jumbotron">
+    <h1 class="text-center"><%= @hack.title %></h3>
+    <p><%= @hack.content %></p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @hack.content %>
-</p>
+  <p>
+    <strong>Category:</strong>
+    <%= @hack.category %>
+  </p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @hack.category %>
-</p>
+  <p>
+    <strong>Credit twitter handle:</strong>  
+    <a class="twitter-follow-button" data-show-count="false" data-size="large"
+    href="https://twitter.com/<%= @hack.credit_twitter_handle %>">
+  Follow @<%= @hack.credit_twitter_handle %></a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  </p>
 
-<p>
-  <strong>Credit twitter handle:</strong>
-  <%= @hack.credit_twitter_handle %>
-</p>
-
-<p>
-  <strong>Credit website:</strong>
-  <%= @hack.credit_website %>
-</p>
-
+  <p>
+    <strong>Credit website:</strong>
+    <%= @hack.credit_website %>
+  </p>
+</div>
+<div class="text-center" id="sub-area">
 <%= link_to 'Edit', edit_hack_path(@hack) %> |
 <%= link_to 'Back', hacks_path %>
+</div>
