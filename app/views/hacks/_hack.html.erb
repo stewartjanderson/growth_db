@@ -1,5 +1,12 @@
-<div class="panel panel-info">
-      <div class="panel-heading">
+<div class="panel">
+      <div class="panel-body" id="inner">
+            <%= link_to hack_path(hack) do %>
+            <h3><%= hack.title %></h3>
+            <% end %>
+      </div>
+      <div class="panel-footer text-center">
+        <div class="row">
+          <div class="col-md-6 text-left">
             <% if hack.category == "Acquisition" %>
               <span class="label label-default">Acquisition</span>
             <% elsif hack.category == "Activation" %>
@@ -12,7 +19,10 @@
               <span class="label label-info">Revenue</span>
             <% else %>
             <% end %>
+          </div>
+          <div class="col-md-6 text-right">
+            <%= time_ago_in_words(hack.created_at) %> old
+          </div>  
+        </div>
       </div>
-      <div class="panel-body text-center" id="inner"><h3><%= link_to hack.title, @hack %></h3></div>
-      <div class="panel-footer text-center">Submitted by</div>
 </div>
