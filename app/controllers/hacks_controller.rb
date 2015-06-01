@@ -4,7 +4,7 @@ class HacksController < ApplicationController
   # GET /hacks
   # GET /hacks.json
   def index
-    @hacks = Hack.all
+    @hacks = Hack.all.order("created_at DESC")
   end
 
   # GET /hacks/1
@@ -25,6 +25,7 @@ class HacksController < ApplicationController
   # POST /hacks.json
   def create
     @hack = Hack.new(hack_params)
+    @hack.user_id = current_user.id
 
     respond_to do |format|
       if @hack.save
