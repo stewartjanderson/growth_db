@@ -5,4 +5,6 @@ class Hack < ActiveRecord::Base
 	validates :title, presence: true
 	validates :content, presence: true
 	validates :category, presence: true
+
+	acts_as_votable
 end

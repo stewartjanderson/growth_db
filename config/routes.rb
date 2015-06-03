@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :hacks
+  resources :hacks do
+    member do
+      put "upvote" => "hacks#upvote"
+      put "unvote" => "hacks#unvote"
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

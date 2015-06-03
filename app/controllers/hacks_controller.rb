@@ -1,5 +1,6 @@
 class HacksController < ApplicationController
-  before_action :set_hack, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :except => [:show, :index]
+  before_action :set_hack, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
   # GET /hacks
   # GET /hacks.json
@@ -60,6 +61,19 @@ class HacksController < ApplicationController
       format.html { redirect_to hacks_url, notice: 'Hack was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  #upvote from user
+  def upvote
+    @hack.upvote_from current_user
+    redirect_to hacks_path
+  end
+
+  #unvote from user
+  def unvote
+    @hack = Hack.find(params[:id]) 
+    @hack.unvote_by current_user
+    redirect_to hacks_path
   end
 
   private

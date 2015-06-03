@@ -50,3 +50,7 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 gem 'jquery-ui-rails'
 
 gem 'simple_form'
+
+gem 'acts_as_votable'
+
+gem 'font-awesome-rails'
