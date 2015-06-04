@@ -1,6 +1,6 @@
 class HacksController < ApplicationController
   before_action :authenticate_user!, :except => [:show, :index]
-  before_action :set_hack, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
+  before_action :set_hack, only: [:show, :edit, :update, :destroy, :upvote, :unvote]
 
   # GET /hacks
   # GET /hacks.json

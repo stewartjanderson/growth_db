@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150603073604) do
+ActiveRecord::Schema.define(version: 20150604063400) do
 
   create_table "commontator_comments", force: :cascade do |t|
     t.string   "creator_type"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 20150603073604) do
     t.integer  "cached_weighted_score",   default: 0
     t.integer  "cached_weighted_total",   default: 0
     t.float    "cached_weighted_average", default: 0.0
+    t.text     "results"
   end
 
   add_index "hacks", ["cached_votes_down"], name: "index_hacks_on_cached_votes_down"
@@ -97,7 +98,8 @@ ActiveRecord::Schema.define(version: 20150603073604) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "twitter_handle"
-    t.string   "display_name"
+    t.string   "username"
+    t.text     "bio"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

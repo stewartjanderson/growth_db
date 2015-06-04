@@ -3,17 +3,14 @@
     <div class="panel-body">
       <p><%= @hack.content %></p>
 
-      <p><strong>Credit twitter handle:</strong><a class="twitter-follow-button" data-show-count="false" data-size="large"
-    href="https://twitter.com/<%= @hack.credit_twitter_handle %>">
-  Follow @<%= @hack.credit_twitter_handle %></a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-      </p>
-
-      <p><strong>Credit website:</strong><%= @hack.credit_website %></p>
+      <p><strong>Results:</strong><%= @hack.results %></p>
     </div>
     <div class="panel-footer">
       <div class="row">
         <div class="col-md-1 text-left"><%= render 'categorylabels' %></div>
-        <div class="col-md-8 col-md-offset-1 text-center">Placeholder</div>
+        <div class="col-md-8 col-md-offset-1 text-center">
+          <strong>Source: </strong><a href="<%= @hack.credit_website %>">Website</a> | <a class="twitter-follow-button" data-show-count="false" href="https://twitter.com/<%= @hack.credit_twitter_handle %>"><%= @hack.credit_twitter_handle %></a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script> 
+        </div>
         <div class="col-md-2 text-right"><%= time_ago_in_words(@hack.created_at) %> old</div>
       </div>
     </div>  
