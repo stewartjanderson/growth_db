@@ -84,6 +84,6 @@ class HacksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hack_params
-      params.require(:hack).permit(:title, :content, :category, :credit_twitter_handle, :credit_website)
+      params.require(:hack).permit(:title, :content, :results, :category, :credit_twitter_handle, :credit_website)
     end
 end
