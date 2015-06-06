@@ -1,3 +1,6 @@
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
 <div class="panel panel-default" id="inner"> 
     <h1 class="text-center"><%= @hack.title %></h1>
     <div class="panel-body">

@@ -30,7 +30,7 @@ class HacksController < ApplicationController
 
     respond_to do |format|
       if @hack.save
-        format.html { redirect_to @hack, notice: 'Hack was successfully created.' }
+        format.html { redirect_to @hack, notice: 'Your growth hack has been created.' }
         format.json { render :show, status: :created, location: @hack }
       else
         format.html { render :new }
