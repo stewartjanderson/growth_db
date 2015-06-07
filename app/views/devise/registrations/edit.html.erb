@@ -7,7 +7,8 @@
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
-
+    <%= f.input :first_name, required: false, label: false, placeholder: "First Name", input_html: {class: "form-control"} %>
+    <%= f.input :last_name, required: false, label: false, placeholder: "Last Name", input_html: {class: "form-control"} %>
     <%= f.input :password, autocomplete: "off", required: false, label: false, placeholder: "New Password", input_html: {class: "form-control"} %>
     <%= f.input :password_confirmation, required: false, label: false, placeholder: "Password Confirmation", input_html: {class: "form-control"} %>
     <%= f.input :current_password, required: true, label: false, placeholder: "Current Password", input_html: {class: "form-control"} %>

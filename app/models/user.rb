@@ -6,5 +6,9 @@ class User < ActiveRecord::Base
 
   has_many :hacks
 
+  validates :username, presence: true
+  validates :email, presence: true
+  validates :password, presence: true
+
   acts_as_voter
 end
