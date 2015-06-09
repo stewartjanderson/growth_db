@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'dotenv-rails', :groups => [:development, :test], :require => 'dotenv/rails-now'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -65,3 +66,5 @@ gem 'simple_form'
 gem 'acts_as_votable'
 
 gem 'font-awesome-rails'
+
+gem 'rails_12factor', :groups => [:staging, :production]
