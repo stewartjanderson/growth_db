@@ -70,3 +70,5 @@ gem 'acts_as_votable'
 gem 'font-awesome-rails'
 
 gem 'rails_12factor', :groups => [:staging, :production]
+
+gem 'newrelic_rpm'
