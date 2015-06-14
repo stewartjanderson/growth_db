@@ -11,6 +11,7 @@ class HacksController < ApplicationController
   # GET /hacks/1
   # GET /hacks/1.json
   def show
+    @hack = Hack.find(params[:id])
   end
 
   # GET /hacks/new
@@ -20,6 +21,7 @@ class HacksController < ApplicationController
 
   # GET /hacks/1/edit
   def edit
+    @hack = Hack.find(params[:id])
   end
 
   # POST /hacks
@@ -56,10 +58,13 @@ class HacksController < ApplicationController
   # DELETE /hacks/1
   # DELETE /hacks/1.json
   def destroy
-    @hack.destroy
-    respond_to do |format|
-      format.html { redirect_to hacks_url, notice: 'Hack was successfully destroyed.' }
-      format.json { head :no_content }
+    @hack = Hack.find(params[:id])
+    if @hack.user == current_user  
+      @hack.destroy
+      respond_to do |format|
+        format.html { redirect_to hacks_url, notice: 'Hack was successfully destroyed.' }
+        format.json { head :no_content }
+      end
     end
   end
 

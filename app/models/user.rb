@@ -11,4 +11,5 @@ class User < ActiveRecord::Base
   validates :password, presence: true
 
   acts_as_voter
+  acts_as_commontator
 end

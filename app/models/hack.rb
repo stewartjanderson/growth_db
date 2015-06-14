@@ -7,4 +7,5 @@ class Hack < ActiveRecord::Base
 	validates :category, presence: true
 
 	acts_as_votable
+	acts_as_commontable
 end

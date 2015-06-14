@@ -74,3 +74,5 @@ gem 'rails_12factor', :groups => [:staging, :production]
 gem 'newrelic_rpm'
 
 gem 'delayed_job_active_record'
+
+gem 'commontator', '~> 4.10.0'
